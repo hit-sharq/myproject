@@ -1,0 +1,128 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-6);
+}
+
+.tableContainer {
+  width: 100%;
+  overflow-x: auto;
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-md);
+}
+
+.table {
+  width: 100%;
+  border-collapse: collapse;
+  background-color: var(--color-background);
+}
+
+.table th,
+.table td {
+  padding: var(--spacing-3) var(--spacing-4);
+  text-align: left;
+  border-bottom: 1px solid var(--color-border);
+}
+
+.table th {
+  font-weight: 600;
+  background-color: var(--color-muted);
+}
+
+.table tr:last-child td {
+  border-bottom: none;
+}
+
+.imageCell {
+  width: 80px;
+}
+
+.imageContainer {
+  width: 80px;
+  height: 60px;
+  overflow: hidden;
+  border-radius: var(--radius-md);
+}
+
+.image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.statusBadge {
+  display: inline-block;
+  padding: var(--spacing-1) var(--spacing-2);
+  border-radius: var(--radius-sm);
+  font-size: 0.75rem;
+  font-weight: 500;
+}
+
+.statusAvailable {
+  background-color: #ecfdf5;
+  color: #065f46;
+}
+
+.statusSold {
+  background-color: #fee2e2;
+  color: #b91c1c;
+}
+
+.featuredBadge {
+  display: inline-block;
+  padding: var(--spacing-1) var(--spacing-2);
+  border-radius: var(--radius-sm);
+  font-size: 0.75rem;
+  font-weight: 500;
+}
+
+.featured {
+  background-color: #fef3c7;
+  color: #92400e;
+}
+
+.notFeatured {
+  background-color: #f3f4f6;
+  color: #4b5563;
+}
+
+.actions {
+  display: flex;
+  gap: var(--spacing-2);
+}
+
+.actionButton {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 32px;
+  height: 32px;
+  border-radius: var(--radius-md);
+  background-color: var(--color-muted);
+  color: var(--color-foreground);
+  transition: all 0.2s ease;
+}
+
+.actionButton:hover {
+  background-color: var(--color-primary);
+  color: white;
+}
+
+.empty {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: var(--spacing-12);
+  text-align: center;
+  background-color: var(--color-background);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-md);
+  gap: var(--spacing-4);
+}
+
+.pagination {
+  display: flex;
+  justify-content: center;
+  margin-top: var(--spacing-4);
+}

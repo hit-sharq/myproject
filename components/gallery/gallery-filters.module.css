@@ -1,0 +1,126 @@
+.container {
+  width: 100%;
+}
+
+.filters {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-6);
+}
+
+.searchContainer {
+  margin-bottom: var(--spacing-4);
+}
+
+.searchForm {
+  display: flex;
+  gap: var(--spacing-2);
+}
+
+.searchInput {
+  flex: 1;
+  padding: var(--spacing-2) var(--spacing-3);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  background-color: var(--color-background);
+  color: var(--color-foreground);
+}
+
+.searchButton {
+  padding: var(--spacing-2) var(--spacing-4);
+  background-color: var(--color-primary);
+  color: white;
+  border: none;
+  border-radius: var(--radius-md);
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.searchButton:hover {
+  background-color: var(--color-primary);
+  opacity: 0.9;
+}
+
+.filterSection {
+  border-top: 1px solid var(--color-border);
+  padding-top: var(--spacing-4);
+}
+
+.filterTitle {
+  font-size: 1rem;
+  margin-bottom: var(--spacing-3);
+  font-weight: 600;
+}
+
+.filterOptions {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-2);
+}
+
+.scrollable {
+  max-height: 200px;
+  overflow-y: auto;
+  padding-right: var(--spacing-2);
+}
+
+.filterOption {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-2);
+  cursor: pointer;
+}
+
+.filterCheckbox {
+  width: 16px;
+  height: 16px;
+  accent-color: var(--color-primary);
+}
+
+.clearButton {
+  margin-top: var(--spacing-4);
+  padding: var(--spacing-2) var(--spacing-4);
+  background-color: transparent;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  color: var(--color-foreground);
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.clearButton:hover {
+  background-color: var(--color-muted);
+}
+
+.loading {
+  padding: var(--spacing-4);
+  text-align: center;
+  color: var(--color-foreground);
+  opacity: 0.7;
+}
+
+.mobileFilterToggle {
+  display: none;
+  width: 100%;
+  padding: var(--spacing-3);
+  background-color: var(--color-primary);
+  color: white;
+  border: none;
+  border-radius: var(--radius-md);
+  margin-bottom: var(--spacing-4);
+  cursor: pointer;
+}
+
+@media (max-width: 768px) {
+  .mobileFilterToggle {
+    display: block;
+  }
+
+  .filters {
+    display: none;
+  }
+
+  .filtersOpen {
+    display: flex;
+  }
+}

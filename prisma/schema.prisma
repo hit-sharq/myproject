@@ -1,0 +1,90 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model User {
+  id        String   @id @default(cuid())
+  clerkId   String   @unique
+  name      String
+  email     String   @unique
+  role      Role     @default(USER)
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+  artist    Artist?
+}
+
+model Artist {
+  id              String    @id @default(cuid())
+  userId          String    @unique
+  user            User      @relation(fields: [userId], references: [id], onDelete: Cascade)
+  name            String
+  profileImageUrl String
+  location        String
+  shortBio        String
+  fullBio         String    @db.Text
+  featured        Boolean   @default(false)
+  socialLinks     Json?
+  createdAt       DateTime  @default(now())
+  updatedAt       DateTime  @updatedAt
+  artworks        Artwork[]
+}
+
+model Category {
+  id          String    @id @default(cuid())
+  name        String    @unique
+  description String
+  imageUrl    String
+  createdAt   DateTime  @default(now())
+  updatedAt   DateTime  @updatedAt
+  artworks    Artwork[]
+}
+
+model Artwork {
+  id               String    @id @default(cuid())
+  title            String
+  description      String    @db.Text
+  artistId         String
+  artist           Artist    @relation(fields: [artistId], references: [id], onDelete: Cascade)
+  imageUrl         String
+  additionalImages String[]
+  price            Float
+  dimensions       Json
+  medium           String
+  categoryId       String
+  category         Category  @relation(fields: [categoryId], references: [id])
+  year             Int
+  available        Boolean   @default(true)
+  featured         Boolean   @default(false)
+  createdAt        DateTime  @default(now())
+  updatedAt        DateTime  @updatedAt
+  inquiries        Inquiry[]
+}
+
+model Inquiry {
+  id        String   @id @default(cuid())
+  name      String
+  email     String
+  message   String   @db.Text
+  artworkId String?
+  artwork   Artwork? @relation(fields: [artworkId], references: [id])
+  status    Status   @default(PENDING)
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+}
+
+enum Role {
+  ADMIN
+  ARTIST
+  USER
+}
+
+enum Status {
+  PENDING
+  RESPONDED
+  CLOSED
+}

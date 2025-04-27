@@ -1,0 +1,149 @@
+.container {
+  width: 100%;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(1, 1fr);
+  gap: var(--spacing-6);
+}
+
+.skeletonCard {
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  background-color: var(--color-background);
+  box-shadow: var(--shadow-md);
+}
+
+.skeletonImage {
+  width: 100%;
+  height: 0;
+  padding-bottom: 75%;
+  background-color: var(--color-muted);
+  position: relative;
+  overflow: hidden;
+}
+
+.skeletonImage::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+  animation: shimmer 1.5s infinite;
+}
+
+.skeletonContent {
+  padding: var(--spacing-4);
+}
+
+.skeletonTitle {
+  height: 24px;
+  width: 80%;
+  background-color: var(--color-muted);
+  margin-bottom: var(--spacing-2);
+  border-radius: var(--radius-md);
+  position: relative;
+  overflow: hidden;
+}
+
+.skeletonTitle::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+  animation: shimmer 1.5s infinite;
+}
+
+.skeletonText {
+  height: 16px;
+  width: 60%;
+  background-color: var(--color-muted);
+  margin-bottom: var(--spacing-2);
+  border-radius: var(--radius-md);
+  position: relative;
+  overflow: hidden;
+}
+
+.skeletonText::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+  animation: shimmer 1.5s infinite;
+}
+
+.skeletonDetails {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.skeletonMedium {
+  height: 14px;
+  width: 40%;
+  background-color: var(--color-muted);
+  border-radius: var(--radius-md);
+  position: relative;
+  overflow: hidden;
+}
+
+.skeletonMedium::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+  animation: shimmer 1.5s infinite;
+}
+
+.skeletonPrice {
+  height: 16px;
+  width: 30%;
+  background-color: var(--color-muted);
+  border-radius: var(--radius-md);
+  position: relative;
+  overflow: hidden;
+}
+
+.skeletonPrice::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+  animation: shimmer 1.5s infinite;
+}
+
+@keyframes shimmer {
+  0% {
+    transform: translateX(-100%);
+  }
+  100% {
+    transform: translateX(100%);
+  }
+}
+
+@media (min-width: 640px) {
+  .grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (min-width: 1024px) {
+  .grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}

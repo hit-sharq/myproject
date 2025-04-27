@@ -1,0 +1,137 @@
+.sidebar {
+  width: 250px;
+  height: 100vh;
+  background-color: var(--color-background);
+  border-right: 1px solid var(--color-border);
+  display: flex;
+  flex-direction: column;
+  transition: width 0.3s ease;
+  position: sticky;
+  top: 0;
+}
+
+.collapsed {
+  width: 70px;
+}
+
+.sidebarHeader {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: var(--spacing-4);
+  border-bottom: 1px solid var(--color-border);
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-2);
+}
+
+.logoText {
+  font-weight: 600;
+  color: var(--color-primary);
+}
+
+.collapseButton {
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: var(--color-foreground);
+  opacity: 0.7;
+  transition: opacity 0.2s ease, transform 0.3s ease;
+}
+
+.collapseButton:hover {
+  opacity: 1;
+}
+
+.rotated {
+  transform: rotate(180deg);
+}
+
+.navigation {
+  flex: 1;
+  padding: var(--spacing-4) 0;
+  overflow-y: auto;
+}
+
+.navList {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-2);
+}
+
+.navItem {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-3);
+  padding: var(--spacing-3) var(--spacing-4);
+  color: var(--color-foreground);
+  border-radius: var(--radius-md);
+  transition: background-color 0.2s ease, color 0.2s ease;
+  white-space: nowrap;
+}
+
+.navItem:hover {
+  background-color: var(--color-muted);
+}
+
+.active {
+  background-color: var(--color-primary);
+  color: white;
+}
+
+.active:hover {
+  background-color: var(--color-primary);
+  opacity: 0.9;
+}
+
+.sidebarFooter {
+  padding: var(--spacing-4);
+  border-top: 1px solid var(--color-border);
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-4);
+}
+
+.userButton {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-3);
+}
+
+.signOut {
+  font-size: 0.875rem;
+  color: var(--color-foreground);
+  opacity: 0.7;
+}
+
+@media (max-width: 768px) {
+  .sidebar {
+    width: 100%;
+    height: auto;
+    position: relative;
+  }
+
+  .collapsed {
+    width: 100%;
+  }
+
+  .sidebarHeader {
+    justify-content: space-between;
+  }
+
+  .collapseButton {
+    display: none;
+  }
+
+  .navigation {
+    display: none;
+  }
+
+  .sidebarFooter {
+    display: none;
+  }
+}

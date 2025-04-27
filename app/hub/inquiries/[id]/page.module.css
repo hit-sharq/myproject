@@ -1,0 +1,91 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-6);
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.breadcrumbs {
+  font-size: 0.875rem;
+  color: var(--color-foreground);
+  opacity: 0.7;
+}
+
+.breadcrumbs a {
+  color: var(--color-primary);
+  text-decoration: none;
+}
+
+.breadcrumbs a:hover {
+  text-decoration: underline;
+}
+
+.statusBadge {
+  display: inline-block;
+  padding: var(--spacing-1) var(--spacing-3);
+  border-radius: var(--radius-md);
+  font-size: 0.875rem;
+  font-weight: 500;
+}
+
+.statusPending {
+  background-color: #fef3c7;
+  color: #92400e;
+}
+
+.statusResponded {
+  background-color: #e0f2fe;
+  color: #0369a1;
+}
+
+.statusClosed {
+  background-color: #f3f4f6;
+  color: #4b5563;
+}
+
+.inquiryCard {
+  background-color: var(--color-background);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-md);
+  padding: var(--spacing-6);
+}
+
+.inquiryHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: var(--spacing-4);
+  padding-bottom: var(--spacing-4);
+  border-bottom: 1px solid var(--color-border);
+}
+
+.inquiryTitle {
+  font-size: 1.5rem;
+  margin-bottom: var(--spacing-2);
+}
+
+.inquiryMeta {
+  font-size: 0.875rem;
+  color: var(--color-foreground);
+  opacity: 0.7;
+}
+
+.inquiryBody {
+  line-height: 1.6;
+}
+
+.inquiryMessage {
+  white-space: pre-wrap;
+}
+
+@media (max-width: 768px) {
+  .inquiryHeader {
+    flex-direction: column;
+    gap: var(--spacing-4);
+  }
+}
